@@ -12,7 +12,7 @@ Four pages, all statically generated:
 - `/publications` — Peer-reviewed publications and work in progress
 - `/teaching` — Current and past courses
 
----
+<!-- ---
 
 ## Local preview
 
@@ -96,4 +96,4 @@ Other things you'll likely want to fill in:
 - Tailwind CSS v4 via `@tailwindcss/vite`
 - `@astrojs/sitemap`, `@astrojs/mdx`
 - Self-hosted fonts: `@fontsource/inter`, `@fontsource/source-serif-4`
-- Class-based dark mode, persisted in `localStorage`
+- Class-based dark mode, persisted in `localStorage` -->
