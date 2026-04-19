@@ -1,0 +1,29 @@
+---
+import SocialIcons from './SocialIcons.astro';
+
+const lastUpdated = new Date().toLocaleDateString('en-GB', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-24 border-t border-black/5 dark:border-white/10">
+  <div
+    class="mx-auto flex max-w-[1100px] flex-col gap-4 px-5 py-8 text-sm text-[color:var(--color-muted)] dark:text-[color:var(--color-muted-dark)] sm:flex-row sm:items-center sm:justify-between"
+  >
+    <div class="flex flex-col gap-1">
+      <span>© {year} Filip-Mihai Toma</span>
+      <span>Last updated: {lastUpdated}</span>
+      <a
+        href="mailto:toma.filip.mihai@gmail.com"
+        class="no-underline hover:underline"
+      >
+        toma.filip.mihai@gmail.com
+      </a>
+    </div>
+
+    <SocialIcons size="sm" />
+  </div>
+</footer>

@@ -1,0 +1,18 @@
+---
+interface Props {
+  title: string;
+  meta?: string;
+}
+const { title, meta } = Astro.props;
+---
+
+<div class="rounded-xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/[0.02] p-4 shadow-sm">
+  <h3 class="font-serif text-base font-semibold leading-snug text-[color:var(--color-ink)] dark:text-[color:var(--color-ink-dark)]">
+    {title}
+  </h3>
+  {meta && (
+    <p class="mt-1 text-sm text-[color:var(--color-muted)] dark:text-[color:var(--color-muted-dark)]">
+      {meta}
+    </p>
+  )}
+</div>

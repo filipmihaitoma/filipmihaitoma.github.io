@@ -1,0 +1,51 @@
+---
+import DarkModeToggle from './DarkModeToggle.astro';
+
+const { pathname } = Astro.url;
+const isActive = (href: string) =>
+  href === '/'
+    ? pathname === '/' || pathname === ''
+    : pathname === href || pathname === href + '/';
+
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/cv', label: 'CV' },
+  { href: '/publications', label: 'Publications' },
+  { href: '/teaching', label: 'Teaching' },
+];
+---
+
+<header
+  class="sticky top-0 z-40 border-b border-black/5 dark:border-white/10 backdrop-blur-md bg-[color:var(--color-bg)]/80 dark:bg-[color:var(--color-bg-dark)]/80"
+>
+  <nav class="mx-auto flex max-w-[1100px] items-center justify-between px-5 py-3">
+    <a
+      href="/"
+      class="font-serif text-base font-semibold tracking-tight text-[color:var(--color-ink)] dark:text-[color:var(--color-ink-dark)] no-underline"
+    >
+      Filip-Mihai Toma
+    </a>
+
+    <div class="flex items-center gap-1 sm:gap-3">
+      <ul class="flex items-center gap-1 sm:gap-3 text-sm">
+        {links.map((l) => (
+          <li>
+            <a
+              href={l.href}
+              class:list={[
+                'rounded-md px-2.5 py-1.5 no-underline transition-colors',
+                isActive(l.href)
+                  ? 'text-[color:var(--color-accent)] dark:text-[color:var(--color-accent-dark)] font-medium'
+                  : 'text-[color:var(--color-ink)]/80 dark:text-[color:var(--color-ink-dark)]/80 hover:text-[color:var(--color-accent)] dark:hover:text-[color:var(--color-accent-dark)]',
+              ]}
+              aria-current={isActive(l.href) ? 'page' : undefined}
+            >
+              {l.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <DarkModeToggle />
+    </div>
+  </nav>
+</header>

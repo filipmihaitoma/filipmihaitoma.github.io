@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CourseCard from '../components/CourseCard.astro';
+import { frontmatter as teachingFrontmatter } from '../content/teaching.md';
+
+type Section = {
+  heading: string;
+  subheading?: string;
+  courses: { title: string; meta?: string }[];
+};
+
+const { sections } = teachingFrontmatter as { sections: Section[] };
+---
+
+<BaseLayout
+  title="Teaching — Filip-Mihai Toma"
+  description="Current and past courses, guest lectures, and supervision."
+>
+  <h1 class="font-serif text-3xl font-semibold tracking-tight">Teaching</h1>
+
+  {sections.map((s) => (
+    <section class="mt-10">
+      <h2 class="font-serif text-xl font-semibold text-[color:var(--color-accent)] dark:text-[color:var(--color-accent-dark)]">
+        {s.heading}
+      </h2>
+      {s.subheading && (
+        <p class="mt-1 text-sm text-[color:var(--color-muted)] dark:text-[color:var(--color-muted-dark)]">
+          {s.subheading}
+        </p>
+      )}
+      <div class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+        {s.courses.map((c) => (
+          <CourseCard title={c.title} meta={c.meta} />
+        ))}
+      </div>
+    </section>
+  ))}
+</BaseLayout>

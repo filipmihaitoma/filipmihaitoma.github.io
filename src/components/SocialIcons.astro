@@ -1,0 +1,53 @@
+---
+interface Props {
+  size?: 'sm' | 'md';
+}
+const { size = 'md' } = Astro.props;
+const dim = size === 'sm' ? 'h-4 w-4' : 'h-5 w-5';
+const pad = size === 'sm' ? 'p-1.5' : 'p-2';
+
+// TODO: fill in real profile URLs
+const links = [
+  { label: 'Google Scholar', href: '#', id: 'scholar' },
+  { label: 'ORCID', href: '#', id: 'orcid' },
+  { label: 'LinkedIn', href: '#', id: 'linkedin' },
+  { label: 'GitHub', href: '#', id: 'github' },
+  { label: 'X / Twitter', href: '#', id: 'x' },
+];
+
+const cls = `inline-flex items-center justify-center ${pad} rounded-md border border-black/10 hover:border-black/30 dark:border-white/10 dark:hover:border-white/30 text-[color:var(--color-ink)] dark:text-[color:var(--color-ink-dark)] hover:text-[color:var(--color-accent)] dark:hover:text-[color:var(--color-accent-dark)] transition-colors no-underline`;
+---
+
+<ul class="flex flex-wrap items-center gap-2" aria-label="Social profiles">
+  {links.map((l) => (
+    <li>
+      <a href={l.href} class={cls} aria-label={l.label} rel="me noopener">
+        {l.id === 'scholar' && (
+          <svg class={dim} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2 1 8.2 12 14.4l9-5.06V15h2V8.2L12 2Zm-7 10.75v4.25c0 2.21 3.13 4 7 4s7-1.79 7-4v-4.25l-7 3.94-7-3.94Z" />
+          </svg>
+        )}
+        {l.id === 'orcid' && (
+          <svg class={dim} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0ZM7.37 18.2H5.62V7.37h1.75V18.2Zm-.88-12.3a1.07 1.07 0 1 1 0-2.13 1.07 1.07 0 0 1 0 2.13Zm10.98 12.3h-3.9c-3.13 0-5.34-2.3-5.34-5.42 0-3.09 2.2-5.41 5.4-5.41h3.84V18.2Zm-3.96-9.24h-2.14v7.67h2.14c2.15 0 3.54-1.43 3.54-3.84 0-2.5-1.53-3.83-3.54-3.83Z"/>
+          </svg>
+        )}
+        {l.id === 'linkedin' && (
+          <svg class={dim} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5.001ZM3 9h4v12H3V9Zm7 0h3.8v1.64h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.05 1.38-2.05 2.81V21h-4V9Z"/>
+          </svg>
+        )}
+        {l.id === 'github' && (
+          <svg class={dim} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-1.93c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.27-1.68-1.27-1.68-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.02 1.74 2.67 1.24 3.32.95.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.3 1.18-3.11-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.19a11 11 0 0 1 5.77 0c2.2-1.5 3.16-1.19 3.16-1.19.63 1.58.24 2.75.12 3.04.74.81 1.18 1.85 1.18 3.11 0 4.43-2.69 5.4-5.26 5.69.41.35.78 1.05.78 2.12v3.15c0 .31.2.66.79.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/>
+          </svg>
+        )}
+        {l.id === 'x' && (
+          <svg class={dim} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18.244 2H21.5l-7.56 8.63L23 22h-6.81l-5.33-6.96L4.8 22H1.54l8.08-9.23L1 2h6.91l4.82 6.37L18.244 2Zm-1.19 18h1.87L7.04 4H5.04l12.014 16Z"/>
+          </svg>
+        )}
+      </a>
+    </li>
+  ))}
+</ul>

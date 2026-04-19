@@ -1,0 +1,53 @@
+---
+interface Props {
+  title: string;
+  authors: string;
+  venue?: string;
+  year?: string | number;
+  url?: string;
+  urlLabel?: string;
+  status?: string;
+}
+const { title, authors, venue, year, url, urlLabel, status } = Astro.props;
+
+// Bold "Toma, F.-M." within the author string
+const boldedAuthors = authors.replace(
+  /(Toma,\s*F\.-M\.)/g,
+  '<strong>$1</strong>'
+);
+---
+
+<article class="flex flex-col gap-3 rounded-xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/[0.02] p-5 shadow-sm sm:flex-row sm:items-start sm:justify-between">
+  <div class="flex-1">
+    <h3 class="font-serif text-base font-semibold leading-snug text-[color:var(--color-ink)] dark:text-[color:var(--color-ink-dark)]">
+      {title}
+    </h3>
+    <p class="mt-1 text-sm text-[color:var(--color-muted)] dark:text-[color:var(--color-muted-dark)]" set:html={boldedAuthors}></p>
+    {(venue || year) && (
+      <p class="mt-1 text-sm text-[color:var(--color-muted)] dark:text-[color:var(--color-muted-dark)]">
+        {venue && <em>{venue}</em>}{venue && year ? ', ' : ''}{year}
+      </p>
+    )}
+  </div>
+
+  <div class="shrink-0 self-start">
+    {url && (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1 rounded-md border border-[color:var(--color-accent)]/30 dark:border-[color:var(--color-accent-dark)]/30 px-3 py-1.5 text-xs font-medium text-[color:var(--color-accent)] dark:text-[color:var(--color-accent-dark)] hover:bg-[color:var(--color-accent)]/5 dark:hover:bg-[color:var(--color-accent-dark)]/10 no-underline transition-colors"
+      >
+        {urlLabel ?? 'Link'}
+        <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M7 17 17 7M9 7h8v8" />
+        </svg>
+      </a>
+    )}
+    {status && (
+      <span class="mt-2 inline-block rounded-full border border-black/10 dark:border-white/15 bg-black/[0.03] dark:bg-white/[0.06] px-3 py-1 text-xs text-[color:var(--color-muted)] dark:text-[color:var(--color-muted-dark)]">
+        {status}
+      </span>
+    )}
+  </div>
+</article>

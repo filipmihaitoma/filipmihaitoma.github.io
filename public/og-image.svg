@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Filip-Mihai Toma, PhD">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FAFAF7"/>
+      <stop offset="1" stop-color="#EDEDE6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="0" y="0" width="8" height="630" fill="#0B3D91"/>
+  <text x="80" y="290" font-family="Georgia, 'Source Serif 4', serif" font-size="72" font-weight="700" fill="#111111">Filip-Mihai Toma, PhD</text>
+  <text x="80" y="360" font-family="Inter, system-ui, sans-serif" font-size="30" fill="#555555">Cognitive Science · Neuroeconomics · AI · Finance</text>
+  <text x="80" y="560" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#0B3D91">filipmihaitoma.github.io</text>
+</svg>

@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PaperEntry from '../components/PaperEntry.astro';
+import { frontmatter as pubsFrontmatter } from '../content/publications.md';
+
+type Pub = {
+  title: string;
+  authors: string;
+  venue?: string;
+  year?: number | string;
+  url?: string;
+  urlLabel?: string;
+};
+type Wip = { title: string; authors: string; status: string };
+
+const { published, wip } = pubsFrontmatter as {
+  published: Pub[];
+  wip: Wip[];
+};
+---
+
+<BaseLayout
+  title="Publications — Filip-Mihai Toma"
+  description="Peer-reviewed publications, work in progress, and papers under review."
+>
+  <h1 class="font-serif text-3xl font-semibold tracking-tight">Publications & Work in Progress</h1>
+
+  <section class="mt-10" aria-labelledby="peer-reviewed">
+    <h2 id="peer-reviewed" class="font-serif text-xl font-semibold text-[color:var(--color-accent)] dark:text-[color:var(--color-accent-dark)]">
+      Peer-reviewed publications
+    </h2>
+    <ol class="mt-4 flex list-none flex-col gap-3 pl-0">
+      {published.map((p) => (
+        <li>
+          <PaperEntry
+            title={p.title}
+            authors={p.authors}
+            venue={p.venue}
+            year={p.year}
+            url={p.url}
+            urlLabel={p.urlLabel ?? (p.url ? 'Link' : undefined)}
+          />
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="mt-12" aria-labelledby="wip">
+    <h2 id="wip" class="font-serif text-xl font-semibold text-[color:var(--color-accent)] dark:text-[color:var(--color-accent-dark)]">
+      Work in progress / under review
+    </h2>
+    <ol class="mt-4 flex list-none flex-col gap-3 pl-0">
+      {wip.map((p) => (
+        <li>
+          <PaperEntry title={p.title} authors={p.authors} status={p.status} />
+        </li>
+      ))}
+    </ol>
+  </section>
+</BaseLayout>

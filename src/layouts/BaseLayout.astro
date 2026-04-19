@@ -1,0 +1,104 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  wide?: boolean;
+  canonical?: string;
+  includePersonSchema?: boolean;
+}
+
+const {
+  title,
+  description = 'Filip-Mihai Toma, PhD — researcher at the intersection of Cognitive Science, Neuroeconomics, AI and Finance.',
+  wide = false,
+  canonical,
+  includePersonSchema = false,
+} = Astro.props;
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site ?? 'https://filipmihaitoma.github.io').toString();
+// TODO: optionally replace with a rasterised og-image.png for platforms that
+// don't render SVG previews (Twitter/X). For now SVG is served directly.
+const ogImage = `${siteUrl}/og-image.svg`;
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Filip-Mihai Toma',
+  givenName: 'Filip-Mihai',
+  familyName: 'Toma',
+  jobTitle: 'Lecturer; Researcher',
+  description,
+  url: siteUrl || 'https://filipmihaitoma.github.io',
+  image: ogImage,
+  affiliation: [
+    { '@type': 'Organization', name: 'Bucharest Business School — Bucharest University of Economic Studies' },
+    { '@type': 'Organization', name: 'London Stock Exchange Group' },
+  ],
+  alumniOf: [
+    { '@type': 'CollegeOrUniversity', name: 'California Institute of Technology' },
+    { '@type': 'CollegeOrUniversity', name: 'Bucharest University of Economic Studies' },
+  ],
+  // TODO: fill in real profile URLs
+  sameAs: [
+    'https://scholar.google.com/',
+    'https://orcid.org/',
+    'https://www.linkedin.com/',
+    'https://github.com/',
+    'https://x.com/',
+  ],
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Filip-Mihai Toma" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Inline theme boot: respects localStorage, falls back to prefers-color-scheme -->
+    <script is:inline>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var useDark = stored ? stored === 'dark' : prefersDark;
+          if (useDark) document.documentElement.classList.add('dark');
+        } catch {}
+      })();
+    </script>
+
+    {includePersonSchema && (
+      <script type="application/ld+json" is:inline set:html={JSON.stringify(personSchema)} />
+    )}
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <Nav />
+    <main class={`mx-auto w-full px-5 py-10 flex-1 ${wide ? 'max-w-[1100px]' : 'max-w-[780px]'}`}>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
