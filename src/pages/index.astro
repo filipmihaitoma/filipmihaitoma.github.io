@@ -1,7 +1,7 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Card from '../components/Card.astro';
-import SocialIcons from '../components/SocialIcons.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
+import SocialIcons from "../components/SocialIcons.astro";
 
 // TODO: drop headshot at public/photo.jpg
 ---
@@ -14,7 +14,9 @@ import SocialIcons from '../components/SocialIcons.astro';
 >
   <section class="grid grid-cols-1 items-start gap-10 md:grid-cols-[260px_1fr]">
     <div class="order-1 md:order-1">
-      <div class="relative h-[260px] w-[260px] max-w-full overflow-hidden rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.04]">
+      <div
+        class="relative h-[260px] w-[260px] max-w-full overflow-hidden rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.04]"
+      >
         <img
           src="/photo.jpg"
           alt="Portrait of Filip-Mihai Toma"
@@ -35,20 +37,30 @@ import SocialIcons from '../components/SocialIcons.astro';
     </div>
 
     <div class="order-2 md:order-2">
-      <h1 class="font-serif text-4xl font-semibold leading-tight tracking-tight text-[color:var(--color-ink)] dark:text-[color:var(--color-ink-dark)] sm:text-5xl">
+      <h1
+        class="font-serif text-4xl font-semibold leading-tight tracking-tight text-[color:var(--color-ink)] dark:text-[color:var(--color-ink-dark)] sm:text-5xl"
+      >
         Filip-Mihai Toma, PhD
       </h1>
-      <p class="mt-3 text-base text-[color:var(--color-muted)] dark:text-[color:var(--color-muted-dark)] sm:text-lg">
-        Researcher at the intersection of Cognitive Science, Neuroeconomics, AI and Finance.
+      <p
+        class="mt-3 text-base text-[color:var(--color-muted)] dark:text-[color:var(--color-muted-dark)] sm:text-lg"
+      >
+        Researcher at the intersection of Cognitive Science, Neuroeconomics, AI
+        and Finance.
       </p>
-      <p class="mt-6 leading-relaxed text-[color:var(--color-ink)]/90 dark:text-[color:var(--color-ink-dark)]/90">
-        I am a researcher working at the intersection of cognitive neuroscience, behavioral economics,
-        artificial intelligence and finance. From 2022 to 2025 I was a Postdoctoral Research Scholar and
-        Fulbright Scholar at the California Institute of Technology, in the labs of Colin Camerer and
-        Shinsuke Shimojo. My work combines EEG, eye-tracking, biometrics and AI to study human–AI
-        interaction, forecast asset-bubble crashes, and preserve human agency in a world of algorithmic
-        decision-making. I currently lecture at Bucharest Business School and serve as Model Manager for
-        Sustainable Finance at the London Stock Exchange Group.
+      <p
+        class="mt-6 leading-relaxed text-[color:var(--color-ink)]/90 dark:text-[color:var(--color-ink-dark)]/90"
+      >
+        I am a researcher working at the intersection of cognitive neuroscience,
+        behavioral economics, artificial intelligence and finance. From 2022 to
+        2024 I was a Postdoctoral Research Scholar and Fulbright Scholar at the
+        California Institute of Technology, in the labs of Colin Camerer and
+        Shinsuke Shimojo. My work combines EEG, eye-tracking, biometrics and AI
+        to study human–AI interaction, forecast asset-bubble crashes, and
+        preserve human agency in a world of algorithmic decision-making. I am
+        currently a lecturer at the Bucharest Business School and a Senior Model
+        Owner for ESG Sustainable Finance models at the London Stock Exchange
+        Group.
       </p>
     </div>
   </section>
@@ -76,25 +88,46 @@ import SocialIcons from '../components/SocialIcons.astro';
     aria-labelledby="contact-heading"
   >
     <h2 id="contact-heading" class="sr-only">Contact</h2>
-    <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <div
+      class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
+    >
       <dl class="grid grid-cols-1 gap-x-6 gap-y-1 text-sm sm:grid-cols-3">
         <div>
-          <dt class="text-[color:var(--color-muted)] dark:text-[color:var(--color-muted-dark)]">Email</dt>
+          <dt
+            class="text-[color:var(--color-muted)] dark:text-[color:var(--color-muted-dark)]"
+          >
+            Email
+          </dt>
           <dd>
-            <a href="mailto:toma.filip.mihai@gmail.com" class="no-underline hover:underline">
+            <a
+              href="mailto:toma.filip.mihai@gmail.com"
+              class="no-underline hover:underline"
+            >
               toma.filip.mihai@gmail.com
             </a>
           </dd>
         </div>
         <div>
-          <dt class="text-[color:var(--color-muted)] dark:text-[color:var(--color-muted-dark)]">Phone</dt>
+          <dt
+            class="text-[color:var(--color-muted)] dark:text-[color:var(--color-muted-dark)]"
+          >
+            Phone
+          </dt>
           <dd>
-            <a href="tel:+40735225204" class="no-underline hover:underline">+40 735 225 204</a>
+            <a href="tel:+40735225204" class="no-underline hover:underline"
+              >+40 735 225 204</a
+            >
           </dd>
         </div>
         <div>
-          <dt class="text-[color:var(--color-muted)] dark:text-[color:var(--color-muted-dark)]">Location</dt>
-          <dd class="text-[color:var(--color-ink)]/90 dark:text-[color:var(--color-ink-dark)]/90">
+          <dt
+            class="text-[color:var(--color-muted)] dark:text-[color:var(--color-muted-dark)]"
+          >
+            Location
+          </dt>
+          <dd
+            class="text-[color:var(--color-ink)]/90 dark:text-[color:var(--color-ink-dark)]/90"
+          >
             Bucharest, Romania
           </dd>
         </div>
