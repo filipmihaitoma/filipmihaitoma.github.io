@@ -6,13 +6,11 @@ const { size = 'md' } = Astro.props;
 const dim = size === 'sm' ? 'h-4 w-4' : 'h-5 w-5';
 const pad = size === 'sm' ? 'p-1.5' : 'p-2';
 
-// TODO: fill in real profile URLs
 const links = [
-  { label: 'Google Scholar', href: '#', id: 'scholar' },
-  { label: 'ORCID', href: '#', id: 'orcid' },
-  { label: 'LinkedIn', href: '#', id: 'linkedin' },
-  { label: 'GitHub', href: '#', id: 'github' },
-  { label: 'X / Twitter', href: '#', id: 'x' },
+  { label: 'Google Scholar', href: 'https://scholar.google.com/citations?user=CHGj0GkAAAAJ&hl=en', id: 'scholar' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/mihai-toma-ab096824/', id: 'linkedin' },
+  { label: 'GitHub', href: 'https://github.com/filipmihaitoma', id: 'github' },
+  { label: 'X / Twitter', href: 'https://x.com/MihaiT89', id: 'x' },
 ];
 
 const cls = `inline-flex items-center justify-center ${pad} rounded-md border border-black/10 hover:border-black/30 dark:border-white/10 dark:hover:border-white/30 text-[color:var(--color-ink)] dark:text-[color:var(--color-ink-dark)] hover:text-[color:var(--color-accent)] dark:hover:text-[color:var(--color-accent-dark)] transition-colors no-underline`;
@@ -25,11 +23,6 @@ const cls = `inline-flex items-center justify-center ${pad} rounded-md border bo
         {l.id === 'scholar' && (
           <svg class={dim} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M12 2 1 8.2 12 14.4l9-5.06V15h2V8.2L12 2Zm-7 10.75v4.25c0 2.21 3.13 4 7 4s7-1.79 7-4v-4.25l-7 3.94-7-3.94Z" />
-          </svg>
-        )}
-        {l.id === 'orcid' && (
-          <svg class={dim} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0ZM7.37 18.2H5.62V7.37h1.75V18.2Zm-.88-12.3a1.07 1.07 0 1 1 0-2.13 1.07 1.07 0 0 1 0 2.13Zm10.98 12.3h-3.9c-3.13 0-5.34-2.3-5.34-5.42 0-3.09 2.2-5.41 5.4-5.41h3.84V18.2Zm-3.96-9.24h-2.14v7.67h2.14c2.15 0 3.54-1.43 3.54-3.84 0-2.5-1.53-3.83-3.54-3.83Z"/>
           </svg>
         )}
         {l.id === 'linkedin' && (

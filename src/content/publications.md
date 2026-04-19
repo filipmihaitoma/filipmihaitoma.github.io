@@ -47,6 +47,7 @@ published:
     authors: "Cepoi, C.O. & Toma, F.-M."
     venue: "Czech Journal of Economics and Finance (Finance-a-Uver), 66(2)"
     year: 2016
+    url: "https://journal.fsv.cuni.cz/storage/1352_toma.pdf"
 
   - title: "Economic Sentiment Impact on Macroeconomic Dynamics in Emerging Market Economies"
     authors: "Toma, F.-M. & Kubinschi, M."
@@ -90,5 +91,5 @@ wip:
 
   - title: "Energy Price Modelling: A Comparative Evaluation of Four Generations of Forecasting Methods"
     authors: "Andrei, A., Velev, G., Toma, F.-M., Pele, D. & Lessmann, S."
-    status: "under review — Journal of Commodity Markets"
+    status: "in prep"
 ---

@@ -1,7 +1,7 @@
 ---
 # Mirror of CV_Toma_Bocconi.tex. Edit this file (not the .tex) to update the CV page.
 # Sections render in the order they appear below.
-pdfHref: /cv/CV_Toma_Bocconi.pdf
+pdfHref: /cv/CV_FilipMihaiToma.pdf
 
 profile:
   - "Interdisciplinary researcher with ~15 years of combined academic and industry experience bridging cognitive neuroscience, behavioral economics, artificial intelligence and finance."

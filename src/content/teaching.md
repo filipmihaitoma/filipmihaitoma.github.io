@@ -3,7 +3,7 @@
 
 sections:
   - heading: "Current teaching"
-    subheading: "Bucharest Business School (2025–present)"
+    subheading: "Bucharest Business School (Oct 2024–present)"
     courses:
       - title: "Behavioral Economics & AI"
         meta: "MSc / Exec — Bucharest Business School"
@@ -15,12 +15,10 @@ sections:
         meta: "Undergraduate — ANIS scholarship 2025"
 
   - heading: "Caltech"
-    subheading: "2022–2025"
+    subheading: "Spring 2023"
     courses:
       - title: "Teaching Assistant — Brain, Mind and Society"
         meta: "Prof. Colin F. Camerer — Caltech"
-      - title: "Guest presentations"
-        meta: "Caltech Neuroeconomics Lab"
 
   - heading: "Bucharest UES — Finance & Banking"
     subheading: "2013–2017"
@@ -31,12 +29,15 @@ sections:
         meta: "Undergraduate"
       - title: "Economics of Money, Banking & Financial Markets"
         meta: "Undergraduate"
+
+  - heading: "Guest & visiting lectures — MSc CEFIN (2013–2017)"
+    courses:
       - title: "Neuroeconomics"
-        meta: "MSc CEFIN"
-      - title: "Financial Econometrics (Matlab, EViews)"
-        meta: "MSc CEFIN"
+        meta: "Guest lecture · MSc CEFIN"
+      - title: "Financial Econometrics"
+        meta: "Guest lecture · MSc CEFIN"
       - title: "Risk Management"
-        meta: "MSc CEFIN"
+        meta: "Guest lecture · MSc CEFIN"
       - title: "Fixed Income"
-        meta: "MSc CEFIN"
+        meta: "Guest lecture · MSc CEFIN"
 ---

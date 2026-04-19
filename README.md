@@ -35,8 +35,8 @@ npm run preview
 
 - **Headshot** — replace `public/photo.jpg` with a 1:1 image (≥ 520×520 recommended).
   If the file is missing, the Home page renders a neutral "FMT" placeholder.
-- **CV PDF** — replace `public/cv/CV_Toma_Bocconi.pdf`. Filename must stay the
-  same, or update `pdfHref` in `src/content/cv.md`.
+- **CV PDF** — replace `public/cv/CV_FilipMihaiToma.pdf`. Filename must stay
+  the same, or update `pdfHref` in `src/content/cv.md`.
 
 ## Editing the content
 
