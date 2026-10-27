@@ -65,13 +65,13 @@ published:
     year: 2015
 
 under_review:
-  - title: "Energy Risk Finance Meter — a benchmark for systemic risk in energy finance"
-    authors: "Toma, F.-M., Dima, D.-M., Grecu, R., Pele, D. & Lessmann, S."
-    status: "under review — Energy Economics"
-
   - title: "Skin in the Game: Electrodermal Arousal, Expectations, and Bubbles in Experimental Asset Markets"
     authors: "Henning, T., Ross, S., Toma, F.-M., Han, J., Ngo, C., Smith, A. & Camerer, C."
     status: "under review — Review of Financial Studies"
+
+  - title: "Energy Risk Finance Meter — a benchmark for systemic risk in energy finance"
+    authors: "Toma, F.-M., Dima, D.-M., Grecu, R., Pele, D. & Lessmann, S."
+    status: "under review — Energy Economics"
 
   - title: "Energy Price Modelling: A Comparative Evaluation of Four Generations of Forecasting Methods"
     authors: "Andrei, A., Velev, G., Toma, F.-M., Pele, D. & Lessmann, S."
@@ -79,6 +79,10 @@ under_review:
 
 wip:
   - title: "Cognitive biases and crash dynamics in LLM-agent markets"
+    authors: "Toma, F.-M."
+    status: "in prep"
+
+  - title: "Supernormal stimuli in finance"
     authors: "Toma, F.-M."
     status: "in prep"
 
