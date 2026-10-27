@@ -13,15 +13,16 @@ type Pub = {
 };
 type Wip = { title: string; authors: string; status: string };
 
-const { published, wip } = pubsFrontmatter as {
+const { published, under_review, wip } = pubsFrontmatter as {
   published: Pub[];
+  under_review: Wip[];
   wip: Wip[];
 };
 ---
 
 <BaseLayout
   title="Publications — Filip-Mihai Toma"
-  description="Peer-reviewed publications, work in progress, and papers under review."
+  description="Peer-reviewed publications, papers under review, and work in progress."
 >
   <h1 class="font-serif text-3xl font-semibold tracking-tight">Publications & Work in Progress</h1>
 
@@ -45,9 +46,22 @@ const { published, wip } = pubsFrontmatter as {
     </ol>
   </section>
 
+  <section class="mt-12" aria-labelledby="under-review">
+    <h2 id="under-review" class="font-serif text-xl font-semibold text-[color:var(--color-accent)] dark:text-[color:var(--color-accent-dark)]">
+      Under review
+    </h2>
+    <ol class="mt-4 flex list-none flex-col gap-3 pl-0">
+      {under_review.map((p) => (
+        <li>
+          <PaperEntry title={p.title} authors={p.authors} status={p.status} />
+        </li>
+      ))}
+    </ol>
+  </section>
+
   <section class="mt-12" aria-labelledby="wip">
     <h2 id="wip" class="font-serif text-xl font-semibold text-[color:var(--color-accent)] dark:text-[color:var(--color-accent-dark)]">
-      Work in progress / under review
+      In prep
     </h2>
     <ol class="mt-4 flex list-none flex-col gap-3 pl-0">
       {wip.map((p) => (

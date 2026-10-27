@@ -29,11 +29,4 @@ sections:
         meta: "Undergraduate"
       - title: "Economics of Money, Banking & Financial Markets"
         meta: "Undergraduate"
-
-  - heading: "Visiting lectures"
-    courses:
-      - title: "Managing Uncertainty: Human Decision-Making & Responsible AI in Business"
-        meta: "INSEEC Business School, Bordeaux, Lyon, Mar. 2026"
-      - title: "Neuroeconomics, Financial Econometrics, Fixed Income, Risk Management"
-        meta: "Guest lecture · MSc CEFIN, 2015"
 ---

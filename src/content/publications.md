@@ -1,6 +1,6 @@
 ---
-# Peer-reviewed publications and work-in-progress / under-review papers.
-# Edit these arrays to update /publications; no markup changes required.
+# Peer-reviewed publications, papers under review, and papers in preparation.
+# Edit the published / under_review / wip arrays to update /publications.
 
 published:
   - title: "Computational Reproducibility and Robustness of Empirical Economics and Political Science Research Between 2022 and 2023"
@@ -64,10 +64,23 @@ published:
     venue: "Procedia Economics and Finance"
     year: 2015
 
-wip:
-  - title: "Predicting Experimental Asset Bubble Returns using Machine Learning and Emotions"
+under_review:
+  - title: "Energy Risk Finance Meter — a benchmark for systemic risk in energy finance"
+    authors: "Toma, F.-M., Dima, D.-M., Grecu, R., Pele, D. & Lessmann, S."
+    status: "under review — Energy Economics"
+
+  - title: "Skin in the Game: Electrodermal Arousal, Expectations, and Bubbles in Experimental Asset Markets"
     authors: "Henning, T., Ross, S., Toma, F.-M., Han, J., Ngo, C., Smith, A. & Camerer, C."
-    status: "in prep — Review of Financial Studies"
+    status: "under review — Review of Financial Studies"
+
+  - title: "Energy Price Modelling: A Comparative Evaluation of Four Generations of Forecasting Methods"
+    authors: "Andrei, A., Velev, G., Toma, F.-M., Pele, D. & Lessmann, S."
+    status: "under review — Romanian Journal of Economic Forecasting"
+
+wip:
+  - title: "Cognitive biases and crash dynamics in LLM-agent markets"
+    authors: "Toma, F.-M."
+    status: "in prep"
 
   - title: "Supernormal stimuli and the peak-shift effect in humans"
     authors: "Toma, F.-M., Kang, Z., Tashjian, S., Shimojo, S., Mobbs, D. & Camerer, C."
@@ -83,13 +96,5 @@ wip:
 
   - title: "RHYTHME: A Real-time HYperscanning pyTHon MEthod for EEG analyses"
     authors: "Hyon, J., Toma, F.-M., Shehata, M."
-    status: "in prep"
-
-  - title: "Energy Risk Finance Meter — a benchmark for systemic risk in energy finance"
-    authors: "Toma, F.-M., Dima, D.-M., Grecu, R., Pele, D. & Lessmann, S."
-    status: "in prep"
-
-  - title: "Energy Price Modelling: A Comparative Evaluation of Four Generations of Forecasting Methods"
-    authors: "Andrei, A., Velev, G., Toma, F.-M., Pele, D. & Lessmann, S."
     status: "in prep"
 ---
